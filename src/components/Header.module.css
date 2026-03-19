@@ -1,59 +1,46 @@
 .header {
-  background-color: #0d1117;
+  background: rgba(7,7,15,0.92);
+  backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  position: sticky; top: 0; z-index: 100;
 }
-
 .inner {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 24px;
-  height: 64px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  max-width: 1320px; margin: 0 auto; padding: 0 24px;
+  height: 64px; display: flex; align-items: center; gap: 32px;
 }
-
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 1.5rem; font-weight: 800;
+  letter-spacing: -0.5px; flex-shrink: 0;
 }
-
-.logoIcon {
-  font-size: 1.8rem;
-}
-
-.logoText {
-  letter-spacing: -0.5px;
-}
-
-.logoAccent {
-  color: var(--accent-green);
-}
-
-.nav {
-  display: flex;
-  gap: 28px;
-}
-
+.logoIcon { color: var(--accent); margin-right: 6px; }
+.accent { color: var(--accent); }
+.nav { display: flex; gap: 24px; flex: 1; }
 .nav a {
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-  font-weight: 500;
+  color: var(--muted); font-size: 0.9rem; font-weight: 500;
   transition: color 0.2s;
 }
-
-.nav a:hover {
-  color: var(--text-primary);
+.nav a:hover { color: var(--text); }
+.actions { display: flex; gap: 10px; align-items: center; margin-left: auto; }
+.cartBtn {
+  background: var(--bg3); border: 1px solid var(--border);
+  color: var(--text); padding: 8px 16px; border-radius: 8px;
+  font-size: 0.88rem; font-weight: 600; position: relative;
+  transition: border-color 0.2s;
 }
-
-@media (max-width: 600px) {
-  .nav {
-    display: none;
-  }
+.cartBtn:hover { border-color: var(--accent); }
+.badge {
+  background: var(--accent); color: #fff; border-radius: 50%;
+  font-size: 0.7rem; padding: 1px 5px; margin-left: 4px;
+}
+.signIn {
+  background: var(--accent); color: #fff; border: none;
+  padding: 8px 18px; border-radius: 8px; font-size: 0.88rem; font-weight: 600;
+  transition: opacity 0.2s;
+}
+.signIn:hover { opacity: 0.85; }
+.hamburger { display: none; background: none; border: none; color: var(--text); font-size: 1.3rem; }
+@media (max-width: 700px) {
+  .nav { display: none; }
+  .hamburger { display: block; }
+  .signIn { display: none; }
 }

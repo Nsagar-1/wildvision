@@ -1,0 +1,10 @@
+.wrapper { max-width: 1320px; margin: 0 auto; padding: 28px 24px 60px; }
+.count { font-size: 0.85rem; color: var(--muted); margin-bottom: 20px; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 22px;
+}
+.empty { text-align: center; padding: 80px 24px; color: var(--muted); }
+.empty span { font-size: 3.5rem; display: block; margin-bottom: 16px; color: var(--accent); }
+.empty p { font-size: 1rem; }
