@@ -1,0 +1,75 @@
+.hero {
+  position: relative;
+  background: linear-gradient(135deg, #0d2b0d 0%, #0d1117 50%, #1a0d00 100%);
+  padding: 80px 24px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '🦁 🐘 🦅 🐋 🦎 🐒 🐆 🦓';
+  position: absolute;
+  font-size: 5rem;
+  opacity: 0.04;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 30%, #0d1117 100%);
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 16px;
+  letter-spacing: -1px;
+}
+
+.accent {
+  color: var(--accent-green);
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.stat {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+.stat strong {
+  color: var(--accent-green);
+  display: block;
+  font-size: 1.3rem;
+}
+
+.statDivider {
+  width: 1px;
+  height: 40px;
+  background: var(--border);
+}
