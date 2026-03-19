@@ -1,34 +1,27 @@
 import { categories } from '../data/models'
 import styles from './FilterBar.module.css'
 
-export default function FilterBar({ category, setCategory, priceFilter, setPriceFilter, search, setSearch }) {
+export default function FilterBar({ category, setCategory, search, setSearch }) {
   return (
     <div className={styles.bar}>
       <div className={styles.inner}>
         <input
           className={styles.search}
-          placeholder="🔍  Search models..."
+          placeholder="🔍  Search 3D models..."
           value={search}
           onChange={e => setSearch(e.target.value)}
         />
         <div className={styles.pills}>
-          {['All', 'Free', 'Premium'].map(p => (
+          {categories.map(c => (
             <button
-              key={p}
-              className={`${styles.pill} ${priceFilter === p ? styles.active : ''}`}
-              onClick={() => setPriceFilter(p)}
+              key={c}
+              className={`${styles.pill} ${category === c ? styles.active : ''}`}
+              onClick={() => setCategory(c)}
             >
-              {p}
+              {c}
             </button>
           ))}
         </div>
-        <select
-          className={styles.select}
-          value={category}
-          onChange={e => setCategory(e.target.value)}
-        >
-          {categories.map(c => <option key={c} value={c}>{c}</option>)}
-        </select>
       </div>
     </div>
   )
